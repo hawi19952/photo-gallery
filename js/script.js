@@ -14,3 +14,4 @@ function resetToDefault() {
 }
 
 console.log('hi from script')
+
