@@ -13,5 +13,20 @@ function resetToDefault() {
   element.innerHTML = defaultMessage;
 }
 
-console.log('hi from script')
 
+function initiate() {
+  resetToDefault();
+  console.log("Page has loaded fully");
+  setAccessAttributesToImages();
+}
+
+function setAccessAttributesToImages() {
+  const imageElements = document.getElementsByClassName("preview");
+  for (let i = 0; i < imageElements.length; i++) {
+    imageElements[i].setAttribute("tabindex", "0")
+    imageElements[i].setAttribute("onmouseover", "changeBackground(this)")
+    imageElements[i].setAttribute("onfocus", "changeBackground(this)")
+    imageElements[i].setAttribute("onblur", "resetToDefault()")
+    imageElements[i].setAttribute("onmouseleave", "resetToDefault()")
+  }
+}
